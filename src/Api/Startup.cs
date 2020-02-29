@@ -30,6 +30,7 @@ namespace Api
         {
             services.AddInfrastructure(Configuration);
             services.AddDataAccessServices(Configuration);
+
             services.AddScoped<IFilmProvider, FilmProvider>();
 
             services.AddControllers();

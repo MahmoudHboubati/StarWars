@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "connectString": "Server=candidate-test.caqylurhpyhw.eu-west-1.rds.amazonaws.com;User ID=candidate;Password=candidate;MultipleActiveResultSets=true",
+            "dialect": "MSSQL",
+            "name": "StarWars"
+        },
+        {
+            "connectString": "Server=candidate-test.caqylurhpyhw.eu-west-1.rds.amazonaws.com;Database=star-wars;User ID=candidate;Password=candidate;MultipleActiveResultSets=true",
+            "dialect": "MSSQL",
+            "name": "StarWars-2"
+        }
+    ]
+}

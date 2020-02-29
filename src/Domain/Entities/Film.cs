@@ -11,7 +11,7 @@ namespace Domain.Entities
         public int EpisodeId { get; set; }
         public string OpeningCrawl { get; set; }
         public string Producer { get; set; }
-        public string ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
         public string Title { get; set; }
     }
 }
