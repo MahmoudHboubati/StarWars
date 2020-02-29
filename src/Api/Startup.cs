@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DAL;
 using Domain.Services.Films;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
@@ -28,8 +29,8 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructure(Configuration);
-
-            services.AddScoped<IFilmProvider>(provider => provider.GetService<FilmProvider>());
+            services.AddDataAccessServices(Configuration);
+            services.AddScoped<IFilmProvider, FilmProvider>();
 
             services.AddControllers();
         }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Domain.Entities;
 using Domain.Repositories.Films;
 
 namespace Domain.Services.Films
@@ -10,6 +12,11 @@ namespace Domain.Services.Films
         public FilmProvider(IFilmRepository repository)
         {
             this.repository = repository;
+        }
+
+        public IEnumerable<Film> Get()
+        {
+            return repository.Get();
         }
     }
 }
