@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Configurations
 {
-    public class FilmConfiguration : IEntityTypeConfiguration<Film>
+    public class FilmEntityConfiguration : IEntityTypeConfiguration<Film>
     {
         public void Configure(EntityTypeBuilder<Film> builder)
         {
