@@ -5,7 +5,7 @@ jobs:
       only:
         - master
     machine: true
-    working_directory: ~/src/api
+    working_directory: ~/src/Api
     steps:
       - checkout
       # web app build image
