@@ -5,12 +5,11 @@ jobs:
       only:
         - master
     machine: true
+    working_directory: ~/src/api
     steps:
       - checkout
-
       # web app build image
       - run: |
-          working_directory: ~/src/api
           docker info
           docker build -t starwarsdoorodont -f .Dockerfile .
       # deploy web app the image
