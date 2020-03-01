@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
 
 # Copy csproj and restore as distinct layers
-COPY *.sln ./
+COPY . ./
 RUN dotnet restore
 
 # RUN apt-get update -yq && apt-get upgrade -yq && apt-get install -yq curl git nano
@@ -9,7 +9,6 @@ RUN dotnet restore
 # RUN npm install -g npm
 
 # Copy everything else and build
-COPY . ./
 WORKDIR /api
 RUN dotnet publish -c Release -o out
 
