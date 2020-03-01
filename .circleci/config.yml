@@ -8,10 +8,9 @@ jobs:
     steps:
       - checkout
 
-    working_directory: ~/src/api
-
       # web app build image
       - run: |
+          working_directory: ~/src/api
           docker info
           docker build -t starwarsdoorodont -f .Dockerfile .
       # deploy web app the image
