@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    branches:
+      only:
+        - master
+    machine: true
+    steps:
+      - checkout
+
+      # web app build image
+      - run: |
+          docker info
+          docker build -t starwarsdoorodont -f .Dockerfile .
+      # deploy web app the image
+      - run: |
+          docker login --username=$HEROKU_USERNAME --password=$HEROKU_API_KEY registry.heroku.com
+          docker tag starwarsdoorodont registry.heroku.com/$HEROKU_APP_NAME/web
+          docker push registry.heroku.com/$HEROKU_APP_NAME/web
+          curl https://cli-assets.heroku.com/install.sh | sh
+          heroku container:release web -a $HEROKU_APP_NAME
