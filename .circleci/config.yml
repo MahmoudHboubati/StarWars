@@ -8,6 +8,8 @@ jobs:
     steps:
       - checkout
 
+    working_directory: ~/src/api
+
       # web app build image
       - run: |
           docker info
