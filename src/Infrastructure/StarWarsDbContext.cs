@@ -1,5 +1,6 @@
 ﻿using System;
 using Domain.Entities;
+using Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
