@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
-WORKDIR /app
+WORKDIR /src/api
 
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./
@@ -15,7 +15,7 @@ RUN dotnet publish -c Release -o out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
-WORKDIR /app
+WORKDIR /src/api
 COPY --from=build-env /app/out .
 ENV ASPNETCORE_Environment production
 CMD ASPNETCORE_URLS=http://*:$PORT dotnet Api.dll
