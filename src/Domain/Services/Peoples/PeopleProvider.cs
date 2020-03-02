@@ -7,9 +7,14 @@ namespace Domain.Services.Peoples
     {
         private readonly IPeopleRepository repository;
 
+        public PeopleProvider(IPeopleRepository repository)
+        {
+            this.repository = repository;
+        }
+
         public People GetMostPersonAppeared()
         {
-            throw new System.NotImplementedException();
+            return repository.GetMostPersonAppeared();
         }
     }
 }

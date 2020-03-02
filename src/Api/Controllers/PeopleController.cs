@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using Domain.Entities;
-using Domain.Services.Films;
 using Domain.Services.Peoples;
 using Microsoft.AspNetCore.Mvc;
 

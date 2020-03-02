@@ -14,8 +14,10 @@ namespace Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new FilmEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new PeopleEntityConfiguration());
         }
 
         public DbSet<Film> Films { get; set; }
+        public DbSet<People> Peoples { get; set; }
     }
 }

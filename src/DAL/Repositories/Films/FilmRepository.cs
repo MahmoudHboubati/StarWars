@@ -8,7 +8,7 @@ using Infrastructure;
 
 namespace DAL.Repositories.Films
 {
-    public class FilmRepository : BaseRepository, IFilmRepository
+    public class FilmRepository : BaseRepository<Film>, IFilmRepository
     {
         public FilmRepository(StarWarsDbContext context) : base(context)
         {

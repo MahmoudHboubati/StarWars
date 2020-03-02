@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Domain.Entities;
-using Domain.Services.Films;
+﻿using Domain.Services.Films;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
