@@ -1,5 +1,6 @@
 using DAL;
 using Domain.Services.Films;
+using Domain.Services.Peoples;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +26,7 @@ namespace Api
             services.AddDataAccessServices(Configuration);
 
             services.AddScoped<IFilmProvider, FilmProvider>();
+            services.AddScoped<IPeopleProvider, PeopleProvider>();
 
             services.AddControllers();
         }
