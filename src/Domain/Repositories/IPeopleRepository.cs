@@ -4,6 +4,6 @@ namespace Domain.Repositories
 {
     public interface IPeopleRepository
     {
-        People GetMostPersonAppeared();
+        People GetMostAppeared();
     }
 }

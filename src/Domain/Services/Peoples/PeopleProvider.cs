@@ -12,9 +12,9 @@ namespace Domain.Services.Peoples
             this.repository = repository;
         }
 
-        public People GetMostPersonAppeared()
+        public People GetMostAppeared()
         {
-            return repository.GetMostPersonAppeared();
+            return repository.GetMostAppeared();
         }
     }
 }

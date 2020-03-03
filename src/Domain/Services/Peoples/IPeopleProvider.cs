@@ -4,6 +4,6 @@ namespace Domain.Services.Peoples
 {
     public interface IPeopleProvider
     {
-        People GetMostPersonAppeared();
+        People GetMostAppeared();
     }
 }

@@ -14,10 +14,10 @@ namespace Api.Controllers
             this.provider = provider;
         }
 
-        [HttpGet("getMostPersonAppeared")]
-        public IActionResult GetMostPersonAppeared()
+        [HttpGet("getMostAppeared")]
+        public IActionResult GetMostAppeared()
         {
-            return Ok(provider.GetMostPersonAppeared());
+            return Ok(provider.GetMostAppeared());
         }
     }
 }

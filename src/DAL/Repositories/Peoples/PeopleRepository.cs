@@ -10,7 +10,7 @@ namespace DAL.Repositories.Peoples
     {
         public PeopleRepository(StarWarsDbContext context) : base(context) { }
 
-        public People GetMostPersonAppeared()
+        public People GetMostAppeared()
         {
             var groupedByPeople = context.FilmsCharacters.GroupBy(s => s.PeopleId);
 
