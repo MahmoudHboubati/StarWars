@@ -8,13 +8,18 @@ namespace DAL.Repositories.Peoples
 {
     public class PeopleRepository : BaseRepository<People>, IPeopleRepository
     {
-        public PeopleRepository(StarWarsDbContext context) : base(context)
-        {
-        }
+        public PeopleRepository(StarWarsDbContext context) : base(context) { }
 
         public People GetMostPersonAppeared()
         {
-            return context.Peoples.FirstOrDefault();
+            var groupedByPeople = context.FilmsCharacters.GroupBy(s => s.PeopleId);
+
+            int mostAppearedPersonId = groupedByPeople
+                .OrderByDescending(group => group.Count())
+                .Select(group => group.Key)
+                .FirstOrDefault();
+
+            return context.Peoples.SingleOrDefault(s => s.Id == mostAppearedPersonId);
         }
     }
 }
