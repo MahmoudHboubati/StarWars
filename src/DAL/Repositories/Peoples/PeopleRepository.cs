@@ -1,8 +1,10 @@
 using System.Linq;
+using System.Threading.Tasks;
 using DAL.Repositories.Base;
 using Domain.Entities;
 using Domain.Repositories;
 using Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories.Peoples
 {
@@ -10,16 +12,16 @@ namespace DAL.Repositories.Peoples
     {
         public PeopleRepository(StarWarsDbContext context) : base(context) { }
 
-        public People GetMostAppeared()
+        public async Task<People> GetMostAppeared()
         {
             var groupedByPeople = context.FilmsCharacters.GroupBy(s => s.PeopleId);
 
-            int mostAppearedPersonId = groupedByPeople
+            int mostAppearedPersonId = await groupedByPeople
                 .OrderByDescending(group => group.Count())
                 .Select(group => group.Key)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
 
-            return context.Peoples.SingleOrDefault(s => s.Id == mostAppearedPersonId);
+            return await context.Peoples.SingleOrDefaultAsync(s => s.Id == mostAppearedPersonId);
         }
     }
 }

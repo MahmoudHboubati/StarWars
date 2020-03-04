@@ -1,4 +1,5 @@
 using System;
+using AutoMapper;
 using DAL;
 using Domain.Services.Films;
 using Domain.Services.Peoples;
@@ -34,6 +35,7 @@ namespace Api
             services.AddScoped<IPeopleProvider, PeopleProvider>();
 
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
         }
 
         private void CorsConfigurations(IServiceCollection services)

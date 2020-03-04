@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Repositories;
 
@@ -12,9 +13,9 @@ namespace Domain.Services.Peoples
             this.repository = repository;
         }
 
-        public People GetMostAppeared()
+        public async Task<People> GetMostAppeared()
         {
-            return repository.GetMostAppeared();
+            return await repository.GetMostAppeared();
         }
     }
 }

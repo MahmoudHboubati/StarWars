@@ -1,9 +1,10 @@
+using System.Threading.Tasks;
 using Domain.Entities;
 
 namespace Domain.Repositories
 {
     public interface IPeopleRepository
     {
-        People GetMostAppeared();
+        Task<People> GetMostAppeared();
     }
 }

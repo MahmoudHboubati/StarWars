@@ -1,3 +1,6 @@
+using System.Threading.Tasks;
+using Api.resources;
+using AutoMapper;
 using Domain.Services.Peoples;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,16 +11,19 @@ namespace Api.Controllers
     public class PeopleController : ControllerBase
     {
         private readonly IPeopleProvider provider;
+        private readonly IMapper mapper;
 
-        public PeopleController(IPeopleProvider provider)
+        public PeopleController(IPeopleProvider provider, IMapper mapper)
         {
+            this.mapper = mapper;
             this.provider = provider;
         }
 
         [HttpGet("getMostAppeared")]
-        public IActionResult GetMostAppeared()
+        public async Task<ActionResult<PeopleDto>> GetMostAppeared()
         {
-            return Ok(provider.GetMostAppeared());
+            var result = await provider.GetMostAppeared();
+            return Ok(mapper.Map<PeopleDto>(result));
         }
     }
 }
