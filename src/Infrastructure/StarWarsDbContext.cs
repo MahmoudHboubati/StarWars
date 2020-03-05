@@ -7,15 +7,17 @@ namespace Infrastructure
 {
     public class StarWarsDbContext : DbContext, IStarWarsDbContext
     {
-        public StarWarsDbContext(DbContextOptions<StarWarsDbContext> options) : base(options)
-        {
-        }
+        public StarWarsDbContext(DbContextOptions<StarWarsDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new FilmEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new PeopleEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new FilmsCharactersEntityConfiguration());
         }
 
         public DbSet<Film> Films { get; set; }
+        public DbSet<People> Peoples { get; set; }
+        public DbSet<FilmsCharacters> FilmsCharacters { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 using System;
 
-namespace Domain.Entities
+namespace Api.resources
 {
-    public class People
+    public class PeopleDto
     {
         public int Id { get; set; }
         public String BirthYear { get; set; }
