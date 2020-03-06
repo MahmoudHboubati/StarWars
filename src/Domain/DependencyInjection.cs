@@ -1,5 +1,6 @@
 using Domain.Services.Films;
 using Domain.Services.Peoples;
+using Domain.Services.Species;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +12,7 @@ namespace Domain
         {
             services.AddScoped<IFilmProvider, FilmProvider>();
             services.AddScoped<IPeopleProvider, PeopleProvider>();
+            services.AddScoped<ISpeciesProvider, SpeciesProvider>();
 
             return services;
         }
