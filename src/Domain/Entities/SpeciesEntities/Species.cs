@@ -1,6 +1,6 @@
 using System;
 
-namespace Domain.Entities
+namespace Domain.Entities.SpeciesEntities
 {
     public class Species
     {

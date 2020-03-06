@@ -8,5 +8,8 @@
     <Folder Include="Entities\" />
     <Folder Include="Services\Films\" />
     <Folder Include="Repositories\" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
   </ItemGroup>
 </Project>
