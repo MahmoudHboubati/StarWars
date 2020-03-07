@@ -1,6 +1,7 @@
 using Api.resources;
 using AutoMapper;
 using Domain.Entities;
+using Domain.Entities.KeyLessEntities.SpeciesEntities;
 
 namespace Api.Mapping
 {
@@ -9,6 +10,7 @@ namespace Api.Mapping
         public MappingProfile()
         {
             CreateMap<People, PeopleDto>();
+            CreateMap<SpeciesAggregate, SpeciesAggregateDto>();
         }
     }
 }

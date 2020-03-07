@@ -1,8 +1,7 @@
 using System;
 using AutoMapper;
 using DAL;
-using Domain.Services.Films;
-using Domain.Services.Peoples;
+using Domain;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,9 +29,7 @@ namespace Api
 
             services.AddInfrastructure(Configuration);
             services.AddDataAccessServices(Configuration);
-
-            services.AddScoped<IFilmProvider, FilmProvider>();
-            services.AddScoped<IPeopleProvider, PeopleProvider>();
+            services.AddDomainServices(Configuration);
 
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));

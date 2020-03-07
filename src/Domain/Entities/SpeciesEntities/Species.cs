@@ -1,13 +1,13 @@
 using System;
 
-namespace Domain.Entities
+namespace Domain.Entities.SpeciesEntities
 {
     public class Species
     {
         public int Id { get; set; }
         public string AverageHeight { get; set; }
         public string AverageLifespan { get; set; }
-        public string ClassiFication { get; set; }
+        public string Classification { get; set; }
         public DateTime Created { get; set; }
         public string Designation { get; set; }
         public DateTime Edited { get; set; }
