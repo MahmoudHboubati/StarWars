@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Repositories.Films;
 
@@ -17,6 +18,11 @@ namespace Domain.Services.Films
         public IEnumerable<Film> Get()
         {
             return repository.Get();
+        }
+
+        public async Task<LongestOpeningCrawl> GetLongestOpeningCrawl()
+        {
+            return await repository.GetLongestOpeningCrawl();
         }
     }
 }

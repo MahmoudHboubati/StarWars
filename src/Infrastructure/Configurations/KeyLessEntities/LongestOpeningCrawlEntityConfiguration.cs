@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Configurations.KeyLessEntities
 {
-    public class PlanetLargestPilotEntityConfiguration : IEntityTypeConfiguration<PlanetLargestPilot>
+    public class LongestOpeningCrawlEntityConfiguration : IEntityTypeConfiguration<LongestOpeningCrawl>
     {
-        public void Configure(EntityTypeBuilder<PlanetLargestPilot> builder)
+        public void Configure(EntityTypeBuilder<LongestOpeningCrawl> builder)
         {
             builder.HasNoKey();
         }
