@@ -20,6 +20,7 @@ namespace Infrastructure
             modelBuilder.ApplyConfiguration(new SpeciesEntityConfiguration());
             modelBuilder.ApplyConfiguration(new SpeciesPeopleEntityConfiguration());
             modelBuilder.ApplyConfiguration(new SpeciesAggregateEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new PlanetLargestPilotEntityConfiguration());
         }
 
         public DbSet<Film> Films { get; set; }
@@ -29,5 +30,6 @@ namespace Infrastructure
         public DbSet<SpeciesPeople> SpeciesPeople { get; set; }
 
         public DbSet<SpeciesAggregate> SpeciesAggregate { get; set; }
+        public DbSet<PlanetLargestPilot> PlanetLargestPilots { get; set; }
     }
 }
