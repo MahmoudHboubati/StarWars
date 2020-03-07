@@ -11,6 +11,7 @@ namespace Api.Mapping
         {
             CreateMap<People, PeopleDto>();
             CreateMap<SpeciesAggregate, SpeciesAggregateDto>();
+            CreateMap<PlanetLargestPilot, PlanetLargestPilotDto>();
         }
     }
 }
