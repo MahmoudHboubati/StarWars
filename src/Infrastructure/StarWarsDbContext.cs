@@ -21,6 +21,7 @@ namespace Infrastructure
             modelBuilder.ApplyConfiguration(new SpeciesPeopleEntityConfiguration());
             modelBuilder.ApplyConfiguration(new SpeciesAggregateEntityConfiguration());
             modelBuilder.ApplyConfiguration(new PlanetLargestPilotEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new LongestOpeningCrawlEntityConfiguration());
         }
 
         public DbSet<Film> Films { get; set; }
@@ -31,5 +32,6 @@ namespace Infrastructure
 
         public DbSet<SpeciesAggregate> SpeciesAggregate { get; set; }
         public DbSet<PlanetLargestPilot> PlanetLargestPilots { get; set; }
+        public DbSet<LongestOpeningCrawl> LongestOpeningCrawls { get; set; }
     }
 }
