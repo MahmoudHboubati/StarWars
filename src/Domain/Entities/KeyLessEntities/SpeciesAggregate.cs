@@ -1,4 +1,4 @@
-namespace Domain.Entities.SpeciesEntities
+namespace Domain.Entities.KeyLessEntities.SpeciesEntities
 {
     public class SpeciesAggregate
     {

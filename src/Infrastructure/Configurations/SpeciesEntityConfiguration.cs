@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Configurations
 {
-    public class SpeciesEntityConfigurations
+    public class SpeciesEntityConfiguration : IEntityTypeConfiguration<Species>
     {
         public void Configure(EntityTypeBuilder<Species> builder)
         {

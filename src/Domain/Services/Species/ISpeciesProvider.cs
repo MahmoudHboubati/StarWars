@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Domain.Entities.SpeciesEntities;
+using Domain.Entities.KeyLessEntities.SpeciesEntities;
 
 namespace Domain.Services.Species
 {

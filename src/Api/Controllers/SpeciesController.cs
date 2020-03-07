@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Api.resources;
 using AutoMapper;
@@ -6,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class SpeciesController : ControllerBase
     {
         readonly ISpeciesProvider provider;
@@ -17,11 +20,11 @@ namespace Api.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<SpeciesAggregateDto>> GetMostAppeared()
+        [HttpGet("getMostAppeared")]
+        public async Task<ActionResult<IEnumerable<SpeciesAggregateDto>>> GetMostAppeared()
         {
             var result = await provider.GetMostAppeared();
-            return Ok(mapper.Map<SpeciesAggregateDto>(result));
+            return Ok(mapper.Map<IEnumerable<SpeciesAggregateDto>>(result));
         }
     }
 }
