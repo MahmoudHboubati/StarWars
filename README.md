@@ -1,5 +1,11 @@
 # StarWars
 
+**Application info**
+
+The backend application is containerized and deployed on [Heroku](https://www.heroku.com) clouds, also it is configured with [CircleCI](https://circleci.com/) for CI (check .circleci/config.yml)
+
+api end point: https://starwarsdoorodont.herokuapp.com/api/
+
 **How to run the project?**
 
 first make sure you have *.net core 3.1* or higher, then use following commands on the root directory:
