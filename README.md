@@ -17,7 +17,7 @@ dotnet run -p src/api
 
 # Database requirements
 
-## I am suggesting following changes on table:
+## I am suggesting following changes on the schema tables:
 
 **people table:**
 
