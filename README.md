@@ -52,3 +52,13 @@ dotnet run -p src/api
 # GraphQL
 
 use the graphQL [playground](https://starwarsdoorodont.herokuapp.com/ui/playground) 
+
+use the query as a test:
+
+```
+{
+  longestOpeningCrawl {
+    count
+  }
+}
+```
