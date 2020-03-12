@@ -1,10 +1,16 @@
 using System;
+using Api.GraphQL;
+using Api.GraphQL.Schemas;
 using AutoMapper;
 using DAL;
 using Domain;
+using GraphQL;
+using GraphQL.Server;
+using GraphQL.Server.Ui.Playground;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +32,7 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             CorsConfigurations(services);
+            services.AddGraphQLServices();
 
             services.AddInfrastructure(Configuration);
             services.AddDataAccessServices(Configuration);
@@ -71,6 +78,9 @@ namespace Api
             {
                 endpoints.MapControllers();
             });
+
+            app.UseGraphQL<StarWarsSchema>();
+            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
         }
     }
 }
