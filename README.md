@@ -48,3 +48,7 @@ dotnet run -p src/api
 - `cost_in_credits` data type should be number, crew should not contain an *'unknown'* value as it should be a number only, null can be considered as *'unknown'*.
 - `manufacturer` should be referenced from a new primary table as it has repeated values, which we might need to rename later.
 - `passengers` data type should be number of integer, should not contain *'n/a'* because it should be a number value.
+
+# GraphQL
+
+use the graphQL [playground](https://starwarsdoorodont.herokuapp.com/ui/playground) 
