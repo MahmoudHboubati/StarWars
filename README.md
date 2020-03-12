@@ -58,6 +58,7 @@ use the query as a test:
 ```
 {
   longestOpeningCrawl {
+    filmTitle
     count
   }
 }
