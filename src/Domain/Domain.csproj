@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.1.1" />
     <Folder Include="Entities\" />
     <Folder Include="Services\Films\" />
     <Folder Include="Repositories\" />
